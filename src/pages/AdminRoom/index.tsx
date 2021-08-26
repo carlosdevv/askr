@@ -34,6 +34,10 @@ export function AdminRoom() {
     history.push('/')
   }
 
+  function handleGoToAskRoom() {
+    history.push(`/rooms/${roomId}`)
+  }
+
   async function handleDeleteQuestion(questionId: string) {
     if (window.confirm("Tem certeza que deseja excluir essa pergunta?")) {
       await database.ref(`rooms/${roomId}/questions/${questionId}`).remove()
@@ -69,6 +73,7 @@ export function AdminRoom() {
           <img src={logoImg} alt="Askr" />
           <div>
             <RoomCode code={params.id} />
+            <Button isOutlined onClick={handleGoToAskRoom}>Enviar Perguntas</Button>
             <Button isOutlined onClick={handleEndRoom}>Encerrar Sala</Button>
           </div>
         </div>

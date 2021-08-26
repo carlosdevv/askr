@@ -11,6 +11,7 @@ import { Question } from "../../components/Question";
 import { useRoom } from "../../hooks/useRoom";
 
 import logoImg from '../../assets/images/logo.svg'
+import ChatBallonImg from '../../assets/images/chat-ballon.svg'
 import './styles.scss'
 
 type RoomParams = {
@@ -104,7 +105,7 @@ export function Room() {
         </form>
 
         <div className="question-list">
-          {questions.map(question => {
+          {questions.length > 0 ? questions.map(question => {
             return (
               <Question
                 key={question.id}
@@ -131,7 +132,13 @@ export function Room() {
                 )}
               </Question>
             )
-          })}
+          }) :
+            <div className="no-questions">
+              <img src={ChatBallonImg} alt="chat-ballon" />
+              <h2>Nenhuma pergunta por aqui...</h2>
+              <p>Faça seu login e seja a primeira pessoa a <br />fazer uma pergunta!</p>
+            </div>
+          }
         </div>
       </main>
 

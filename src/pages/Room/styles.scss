@@ -28,7 +28,7 @@
       h1 {
         font-family: "Poppins", sans-serif;
         font-size: 24px;
-        color: #29292e;
+        color: #f8f8f8;
       }
 
       span {
@@ -72,7 +72,7 @@
 
           span {
             margin-left: 8px;
-            color: #29292e;
+            color: #f8f8f8;
             font-weight: 500;
             font-size: 14px;
           }
@@ -86,7 +86,7 @@
           button {
             background: transparent;
             border: 0;
-            color: #835afd;
+            color: #c1314c;
             text-decoration: underline;
             cursor: pointer;
           }
@@ -96,6 +96,29 @@
 
     .question-list {
       margin-top: 32px;
+
+      .no-questions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+
+        h2 {
+          font-family: "Poppins";
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 27px;
+          text-align: center;
+        }
+
+        p {
+          font-family: "Roboto";
+          font-size: 14px;
+          line-height: 21px;
+          text-align: center;
+        }
+      }
     }
   }
 }

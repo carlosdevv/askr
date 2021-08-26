@@ -4,9 +4,9 @@
   height: 100vh;
 
   aside {
-    flex: 7;
+    flex: 5;
 
-    background: #835afd;
+    background: #c1314c;
     color: #fff;
 
     display: flex;
@@ -16,7 +16,8 @@
     padding: 120px 80px;
 
     img {
-      max-width: 320px;
+      max-width: 420px;
+      margin-bottom: 32px;
     }
 
     strong {

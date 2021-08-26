@@ -1,8 +1,9 @@
 import { FormEvent, useState } from 'react'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
+import toast, { Toaster } from 'react-hot-toast';
 
-import IllustrationImg from '../../assets/images/Illustration.svg'
+import IllustrationImg from '../../assets/images/lee.svg'
 import logoImg from '../../assets/images/logo.svg'
 
 import { Button } from '../../components/Button'
@@ -19,6 +20,7 @@ export function NewRoom() {
     event.preventDefault()
 
     if (newRoom.trim() === '') {
+      toast.error('Informe o nome da sala.')
       return
     }
 
@@ -29,15 +31,15 @@ export function NewRoom() {
       authorId: user?.id,
     })
 
-    history.push(`/rooms/${firebaseRoom.key}`)
+    history.push(`/admin/rooms/${firebaseRoom.key}`)
   }
 
   return (
     <div id="page-auth">
       <aside>
         <img src={IllustrationImg} alt="Illustration" />
-        <strong>Crie salas de Q&amp;A ao-vivo</strong>
-        <p>Tire as dúvidas da sua audiência em tempo-real</p>
+        <strong>Crie salas e faça as melhores perguntas ao-vivo</strong>
+        <p>Para os seus streamers favoritos.</p>
       </aside>
       <main>
         <div className="main-content">
@@ -57,6 +59,10 @@ export function NewRoom() {
           <p>Quer entrar em uma sala ja existente?<Link to="/">Clique aqui</Link></p>
         </div>
       </main>
+      <Toaster
+        position="top-center"
+        reverseOrder={true}
+      />
     </div>
   )
 }

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
 import toast, { Toaster } from 'react-hot-toast';
 
-import IllustrationImg from '../../assets/images/Illustration.svg'
+import IllustrationImg from '../../assets/images/lee.svg'
 import logoImg from '../../assets/images/logo.svg'
 import googleIconImg from '../../assets/images/google-icon.svg'
 
@@ -29,6 +29,7 @@ export function Home() {
     event.preventDefault();
 
     if (roomCode.trim() === '') {
+      toast.error('Informe o código da sala.')
       return
     }
 
@@ -51,8 +52,8 @@ export function Home() {
     <div id="page-auth">
       <aside>
         <img src={IllustrationImg} alt="Illustration" />
-        <strong>Crie salas de Q&amp;A ao-vivo</strong>
-        <p>Tire as dúvidas da sua audiência em tempo-real</p>
+        <strong>Crie salas e faça as melhores perguntas ao-vivo</strong>
+        <p>Para os seus streamers favoritos.</p>
       </aside>
       <main>
         <div className="main-content">
